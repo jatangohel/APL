@@ -93,19 +93,19 @@ function createTeamInFoElement(teamAPIResponse) {
 function displayTeamInfo() {
     console.log("function called");
     $.ajax({
-        url: "http://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
+        url: "https://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
         dataType: "json",
         crossDomain: true,
         type: 'GET',
         contentType: "application/x-www-form-urlencoded; charset=utf-8",
         success: function (data) {
             teamAPIResponse = data;
-            console.log('called made');
+            //console.log('called made');
             createTeamInFoElement(teamAPIResponse);
         },
         error: function (errData) {
             console.log(errData);
-            alert('error');
+           // alert('error');
         }
     });
     setTimeout(displayTeamInfo,5000);
