@@ -3,7 +3,7 @@ function main() {
 
 (function () {
    'use strict';
-   
+
   	$('a.page-scroll').click(function() {
         if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
           var target = $(this.hash);
@@ -17,7 +17,7 @@ function main() {
         }
       });
 
-	
+
     // Show Menu on Book
     $(window).bind('scroll', function() {
         var navHeight = $(window).height() - 500;
@@ -28,7 +28,7 @@ function main() {
         }
     });
 
-    $('body').scrollspy({ 
+    $('body').scrollspy({
         target: '.navbar-default',
         offset: 80
     });
@@ -41,7 +41,7 @@ function main() {
       $(".navbar-collapse").collapse('hide');
     }
   });
-	
+
   	// Portfolio isotope filter
     $(window).load(function() {
         var $container = $('.portfolio-items');
@@ -67,15 +67,36 @@ function main() {
             });
             return false;
         });
+        $.ajax({
+            url: "http://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
+            dataType:"jsonp",
+            xhrFields: {
+                withCredentials: true
+            },
+            crossDomain:true,
+            type:'GET',
+            contentType:"application/x-www-form-urlencoded; charset=utf-8",
+            success: function (data) {
+                alert('success');
+                console.log(data);
+            },
+            error: function (errData) {
+                console.log(errData);
+                alert('error');
+            }
+        });
+       /* $.get( "http://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams", function( data ) {
+           console.log(data);
+        });*/
 
     });
-	
-    // Nivo Lightbox 
+
+    // Nivo Lightbox
     $('.portfolio-item a').nivoLightbox({
-            effect: 'slideDown',  
-            keyboardNav: true,                            
+            effect: 'slideDown',
+            keyboardNav: true,
         });
-		
+
 	// Testimonial Slider
 	  	$(document).ready(function() {
 	      $("#testimonial").owlCarousel({
@@ -85,7 +106,7 @@ function main() {
         singleItem:true
         });
 
-  	});	
+  	});
 
 }());
 
