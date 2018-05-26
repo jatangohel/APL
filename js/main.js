@@ -1,6 +1,8 @@
 let teamAPIResponse;
 
 function createTeamInFoElement(teamAPIResponse) {
+    $('#first_4_teams').html('');
+    $('#last_4_teams').html('');
     for (let i = 0; i < teamAPIResponse.length; i++) {
         let team_name = teamAPIResponse[i].teamName;
         let team_url;
@@ -89,6 +91,7 @@ function createTeamInFoElement(teamAPIResponse) {
 }
 
 function displayTeamInfo() {
+    console.log("function called");
     $.ajax({
         url: "http://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
         dataType: "json",
@@ -105,6 +108,7 @@ function displayTeamInfo() {
             alert('error');
         }
     });
+    setTimeout(displayTeamInfo,5000);
 }
 
 $(document).ready(function () {
