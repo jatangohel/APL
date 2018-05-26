@@ -200,6 +200,10 @@ header .intro-text {
 	padding-bottom: 200px;
 	text-align: center;
 }
+
+.hundered-dollar{
+    background-color:yellow!important;
+}
 /* About Section */
 #about {
 	padding: 120px 0 80px 0;
