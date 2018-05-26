@@ -108,7 +108,7 @@ function displayTeamInfo() {
            // alert('error');
         }
     });
-    setTimeout(displayTeamInfo,5000);
+    setTimeout(displayTeamInfo,30000);
 }
 
 $(document).ready(function () {
