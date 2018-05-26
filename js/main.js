@@ -93,7 +93,7 @@ function createTeamInFoElement(teamAPIResponse) {
 function displayTeamInfo() {
     console.log("function called");
     $.ajax({
-        url: "https://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
+        url: "http://cloud-env.m33mn2puip.us-east-2.elasticbeanstalk.com/webapi/teams/getTeams",
         dataType: "json",
         crossDomain: true,
         type: 'GET',
